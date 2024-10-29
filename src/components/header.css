@@ -1,0 +1,42 @@
+/* Estilos para los logos en el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    background-color: #ffffff4d;
+
+    & .logo {
+        max-width: 150px;
+        height: auto;
+    }
+
+    & .logo-center {
+        display: flex;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 600px) {
+    header {
+        justify-content: center;
+    }
+
+    /* Ocultar todos los logos excepto logo_carrera2 en móviles */
+    header .logo,
+    header .logo-center .logo-carrera1,
+    header img:not(.logo-carrera2) {
+        display: none;
+    }
+
+    /* Mostrar solo logo_carrera2 en móviles */
+    header .logo-center .logo-carrera2 {
+        display: block;
+        max-width: 400px;
+    }
+
+    /* Mantener el encabezado legible sin desbordar */
+    header .logo-center {
+        flex-direction: column;
+        align-items: center;
+    }
+}

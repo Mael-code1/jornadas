@@ -1,0 +1,90 @@
+/* Contenedor del contador */
+.countdown-container {
+    color: #333; /* Color del texto */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    margin-bottom: 20px;
+
+    /* Estilo para cada bloque de tiempo */
+    & > .countdown-block {
+        display: inline-block; /* Mostrar en línea */
+        padding: 10px 20px; /* Espaciado interno */
+        margin: 0 10px; /* Espaciado entre bloques */
+        background-color: #fff; /* Fondo blanco para cada bloque */
+        border-radius: 5px; /* Bordes redondeados */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para bloques */
+
+        /* Ajustes para el texto dentro de los bloques */
+        & > span {
+            display: block; /* Mostrar cada número en una línea */
+            font-size: 2em; /* Tamaño grande para los números */
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        & > p {
+            margin: 0; /* Sin margen */
+            font-size: 1.5em; /* Tamaño más pequeño para las etiquetas */
+            color: #555; /* Color gris para las etiquetas */
+        }
+    }
+}
+
+/* Estilo para el mensaje de "Evento iniciado" */
+.evento-iniciado {
+    font-size: 2em; /* Tamaño grande */
+    font-weight: bold; /* Texto en negrita */
+    color: white; /* Color blanco */
+    background-color: green; /* Fondo verde */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 20px; /* Margen superior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Ajuste del contador para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .countdown-container {
+        font-size: 10px; /* Ajustamos el tamaño para móviles */
+
+        & > .countdown-block {
+            padding: 8px 15px; /* Ajustamos el espaciado interno para móviles */
+
+            & > span {
+                font-size: 1.5em; /* Tamaño más pequeño en móviles */
+            }
+        }
+    }
+}
+
+/* Estilo para la palabra "Faltan" */
+.faltan {
+    font-size: 3em; /* Tamaño grande */
+    font-weight: bold; /* Texto en negrita */
+    background: linear-gradient(
+        45deg,
+        #007bff,
+        #ff6f61
+    ); /* Gradiente de color */
+    -webkit-background-clip: text; /* Clip del fondo en texto para gradiente */
+    -webkit-text-fill-color: transparent; /* Hacer el relleno del texto transparente */
+    text-shadow: 2px 2px 4px rgb(0, 119, 255); /* Sombra del texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    animation: pulse 1.5s infinite; /* Efecto de pulso */
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

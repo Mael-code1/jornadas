@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+    color-scheme: #007bff;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #007bff;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Estilos para los expositores */
+.expositor {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.expositor-img {
+    width: 100px; /* Tamaño reducido para estilo infantil */
+    height: 100px;
+    border-radius: 50%; /* Forma redonda */
+    margin-right: 20px;
+    border: 2px solid #007bff;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    transition: transform 0.3s ease;
+}
+
+.expositor-img:hover {
+    transform: scale(1.1); /* Efecto de agrandar al pasar el cursor */
+}
+
+.expositor-info {
+    max-width: 700px;
+}
+
+.expositor-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Otros estilos y animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tabcontent > h2 {
+    text-align: left;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+select {
+    width: 100%;
+    padding: 7px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    font-size: 1em;
+    transition: border 0.3s ease;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+select:focus {
+    border: 1px solid #007bff;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#mensaje,
+#mensaje_videojuegos,
+#mensaje_viernes {
+    margin-top: 10px;
+    color: red;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Contadores */
+#contador1,
+#contador2,
+#contador3,
+#contador4,
+#contador5,
+#contador6,
+#contador7,
+#contador8,
+#contador9,
+#contador_juego1,
+#contador_juego2,
+#contador_juego3 {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tabs button {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

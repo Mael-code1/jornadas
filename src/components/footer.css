@@ -1,0 +1,27 @@
+footer {
+    background-color: #ffffff;
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+
+    & > ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    p {
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+/* Hacer el pie de página más pequeño en pantallas móviles */
+@media screen and (max-width: 600px) {
+    footer p {
+        font-size: 0.9em;
+    }
+}

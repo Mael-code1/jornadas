@@ -1,0 +1,47 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Registro_talleres {
+  id              Int      @id @default(autoincrement())
+  taller_horario1 String
+  taller_horario2 String
+  taller_horario3 String
+  fecha_registro  DateTime @default(now())
+  usuario_id      Int
+  usuario         Usuario  @relation(fields: [usuario_id], references: [id])
+}
+
+model Usuario {
+  id                   Int                    @id @default(autoincrement())
+  apellidos            String
+  nombre               String
+  numero_control       String                 @unique
+  email                String                 @unique
+  semestre             Int
+  registro_talleres    Registro_talleres[]
+  Registro_videojuegos Registro_videojuegos[]
+  Registro_viernes     Registro_viernes[]
+}
+
+model Registro_videojuegos {
+  id                      Int      @id @default(autoincrement())
+  fecha_registro          DateTime @default(now())
+  videojuego_seleccionado String
+  usuario_id              Int
+  usuario                 Usuario  @relation(fields: [usuario_id], references: [id])
+}
+
+model Registro_viernes {
+  id             Int      @id @default(autoincrement())
+  fecha_registro DateTime @default(now())
+  taller         String
+  usuario_id     Int
+  usuario        Usuario  @relation(fields: [usuario_id], references: [id])
+}
